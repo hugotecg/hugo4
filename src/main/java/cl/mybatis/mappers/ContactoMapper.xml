@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Contacto">
+	<insert id="insertarContacto" useGeneratedKeys="true" keyProperty="id" parameterType="cl.mybatis.pojos.Contacto">
+		insert into contacto (nombre, apellido, numero)  values (#{nombre}, #{apellido}, #{numero})
+	</insert>
+	
+	<select id="getContactos" resultType="cl.mybatis.pojos.Contacto" >
+		select * from contacto
+	</select>
+
+  	<delete id="deleteContactos" >
+  		delete from contacto  where nombre = #{nombre}
+  	</delete>
+	
+	
+		
+</mapper> 
+ 
